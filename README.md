@@ -179,4 +179,9 @@ media/
 
 ---
 
+## Notes
+- Tested on Hero 11, other models may vary
+
+---
+
 Made by [Purva Patel](https://github.com/Purva137)
