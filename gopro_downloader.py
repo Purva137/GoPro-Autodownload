@@ -1,5 +1,4 @@
 import requests
-import os
 import time
 import struct
 import shutil
@@ -126,14 +125,6 @@ def gps_and_date_mp4(path):
         return None, None, None
 
 
-def make_thumbnail(src_path, dest_dir, filename):
-    thumb_path = dest_dir / (Path(filename).stem + "_thumb.jpg")
-    cmd = f'ffmpeg -y -i "{src_path}" -ss 00:00:01 -vframes 1 -vf scale=320:-1 "{thumb_path}" -loglevel quiet 2>nul'
-    os.system(cmd)
-    if thumb_path.exists():
-        print(f"     🖼  thumbnail saved")
-
-
 _geo_cache = {}
 def get_city(lat, lon):
     if lat is None: return None
@@ -190,9 +181,6 @@ def download_file(directory, filename):
     fp = dest / filename
     tmp.rename(fp)
     print(f"     → media/{loc}/{date}/{fp.name}")
-
-    if is_mp4:
-        make_thumbnail(fp, dest, filename)
 
 
 def run():
