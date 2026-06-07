@@ -6,7 +6,7 @@ Automate GoPro media offload — auto-detects camera Wi-Fi, downloads footage or
 
 ## Why?
 
-GoPro killed their desktop app. The only official way to transfer footage is their mobile app or physically removing the SD card. This project fixes that — connect your laptop to GoPro Wi-Fi and everything downloads automatically, organized and backed up.
+GoPro discontinued their desktop app, GoPro Quik. The only official way to transfer footage is their mobile app or physically removing the SD card. This project fixes that — connect your laptop to GoPro Wi-Fi and everything downloads automatically, organized and backed up.
 
 ---
 
