@@ -29,6 +29,7 @@ GoPro discontinued their desktop app, GoPro Quik. The only official way to trans
 
 | File | Purpose |
 |---|---|
+| `install_and_run.bat` | One-click setup for non-coders — installs dependencies and runs the downloader |
 | `gopro_downloader.py` | Core download logic. Run manually or triggered by watcher. |
 | `gopro_watcher.py` | Background watcher — detects GoPro Wi-Fi and auto-triggers download. |
 | `gopro_drive_upload.py` | Manual Google Drive sync. |
@@ -36,18 +37,19 @@ GoPro discontinued their desktop app, GoPro Quik. The only official way to trans
 
 ---
 
-## Requirements
+## Quick Start (Non-Coders)
 
-**Python 3.8+**
+1. Download and install Python from [python.org](https://www.python.org/downloads/)
+   - **IMPORTANT: Check "Add Python to PATH" during installation**
+2. Download this repo as a ZIP → extract it
+3. Connect your laptop to GoPro Wi-Fi
+4. Double-click `install_and_run.bat`
 
-Install dependencies:
-```bash
-pip install requests google-auth-oauthlib google-api-python-client
-```
+That's it — it installs everything automatically and starts downloading.
 
 ---
 
-## Setup
+## Setup (Coders)
 
 ### Step 1 — Clone the repo
 
@@ -152,17 +154,18 @@ Files are **copied** (not moved) into `media/city/date/` — originals stay in `
 ---
 
 ## Folder Structure
-media/
-  location/
-    date/
-      image.jpg/video.mp4
+
+media/ 
+   location/ 
+         date/ 
+            image.jpg or video.mp4
 
 ---
 
 ## Tips
 
 - Shoot outdoors for GPS lock — city names won't work indoors
-- For geocoding during GoPro download (both Wi-Fi connections needed), plug your phone via USB and enable USB tethering on your phone — laptop gets internet through phone while staying on GoPro Wi-Fi or connect it with a Dongle/Wi-Fi adaptors/Network adaptors
+- For geocoding during GoPro download, plug your phone via USB and enable USB tethering — laptop gets internet through phone while staying on GoPro Wi-Fi
 - Quality is never touched — raw byte-for-byte copy at every step, nothing is re-encoded
 - `credentials.json` and `token.pickle` are in `.gitignore` — never commit these
 
@@ -172,14 +175,16 @@ media/
 
 | Feature | Windows | Mac |
 |---|---|---|
+| One-click installer | ✅ | ❌ |
 | Manual download | ✅ | ✅ |
-| Auto Wi-Fi watcher | ✅ | ❎ Manual only |
+| Auto Wi-Fi watcher | ✅ | ⚠️ Manual only |
 | Google Drive sync | ✅ | ✅ |
 | Organise existing footage | ✅ | ✅ |
 
 ---
 
 ## Notes
+
 - Tested on Hero 11, other models may vary
 
 ---
